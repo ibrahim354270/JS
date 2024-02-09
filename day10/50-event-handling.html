@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling</title>
+    <style>
+        .btn-hello {
+            background-color: red;
+            padding: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+        }
+        .btn-hallo {
+            background-color: blue;
+            padding: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            color: yellow;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body style="margin: 2rem">
+    <button onclick="hello()" class="btn-hello" >Hello</button>
+    <button class="btn-hallo" >Hallo</button>
+    <script>
+//1.yontem
+const hello = () => console.log("Hello 1.yontem");
+
+/* const hallo = () => console.log("Hello 2.yontem");
+        let btn=document.querySelector(".btn-hallo")
+        btn.onclick=hallo; */
+
+        const hallo = () => console.log("Hallo 2.yontem");
+
+        document.querySelector(".btn-hallo").onclick=hallo;
+
+
+
+
+    </script>
+</body>
+</html>

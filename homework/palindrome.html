@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polindrome</title>
+    <link rel="stylesheet" href="/palindrome.css">
+</head>
+<body>
+    <div>
+    
+    <input type="number" id="inp" placeholder="Sayi Giriniz:" />
+    <button onclick="polindrome()" >Kontol</button>
+    <h3 class="result"></h3>
+
+    <script>
+        let resultEl = document.querySelector(".result");
+  
+        const polindrome = () => {
+          let inputEl = document.querySelector("#inp");
+          let inputValue = inputEl.value;
+          let reverse = "";
+  
+          for (let i = inputValue.length - 1; i >= 0; i--) {
+            reverse += inputValue.charAt(i);
+          }
+  
+          if (inputValue == reverse) {
+            resultEl.innerHTML = `Girdiginiz sayi: ${inputValue} Polindrome`;
+          } else {
+            resultEl.innerHTML = `Girdiginiz sayi: ${inputValue} Polindrome degil`;
+          }
+        };
+      </script>
+      </div>
+</body>
+</html>
