@@ -9,4 +9,4 @@ selectOptions+=`<option> ${country.name.common} </option>`
 document.getElementById("selectID").innerHTML=selectOptions
 return selectOptions;
  }
-loadData()
+ loadData()
