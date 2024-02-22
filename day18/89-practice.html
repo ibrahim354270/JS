@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,7 +6,7 @@
     <title>Document</title>
   </head>
   <body>
-<h1 id="clock"></h1>
+    <h1 id="clock"></h1>
   <script>
     let clockEl = document.getElementById("clock"); //h1
     let currentDate = new Date();
@@ -18,24 +17,29 @@
     window.addEventListener("DOMContentLoaded", function () {
       displayCurentClock();
       setInterval(displayCurentClock, 1000);
+      
     });
 
     const displayCurentClock = () => {
       currentSeconds++;
-      if (currentSeconds >= 60) {
+      if (currentSeconds > 59) {
         currentSeconds = 0;
         currentMinutes++;
-        if (currentMinutes >= 60) {
+        if (currentMinutes > 60) {
           currentMinutes = 0;
           currentHours++;
-          if (currentHours >= 24) {
+          if (currentHours > 24) {
             currentHours = 0;
           }
         }
       }
-      clockEl.textContent = `${currentHours}:${currentMinutes}:${currentSeconds}`;
+      //padStart 02 gibi 2 haneli gözükmesi için kullanıyoruz.
+      let formattedSeconds = currentSeconds.toString().padStart(2, '0');
+      let formattedMinutes = currentMinutes.toString().padStart(2, '0');
+      let formattedHours = currentHours.toString().padStart(2, '0');
+      clockEl.textContent = `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
     };
-    
-</script>
-</body>
+   
+    </script>
+  </body>
 </html>
